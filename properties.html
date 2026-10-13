@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Available Properties | Leigh Leigh's Cottages</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout: sticky nav, split hero (copy left, cottage scene right), about with three stay types, dark properties band, contact split. */
+:root {
+  --slate: #4B5F75; --slate-dark: #2D3F54; --slate-light: #6F8296; --slate-pale: #E8EDF2;
+  --sand: #C4A882; --sand-ink: #85693F; --khaki: #E4D8C0; --white: #ffffff; --off-white: #F7F8FA;
+  --text: #1A2332; --text-light: #546474; --focus: #85693F;
+  --ff-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --ff-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; font-family: var(--ff-body); color: var(--text); background: var(--off-white); overflow-x: hidden; line-height: 1.5; }
+[hidden] { display: none !important; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.on-dark { --focus: var(--sand); }
+
+nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .85rem var(--gutter); background: var(--khaki); border-bottom: 1px solid rgba(133,105,63,.28); }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; font-family: var(--ff-display); font-size: 1.45rem; font-weight: 600; color: var(--slate-dark); white-space: nowrap; }
+.brand span { color: var(--sand-ink); }
+.brand svg, .brand img { flex: none; }
+.logo-img { width: auto; height: 49px; display: block; }
+.nav-links .nav-cta, .nav-links .nav-cta:hover { color: var(--white); }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: .8rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--slate-dark); text-decoration: none; transition: color .2s; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--sand-ink); }
+.nav-links a[aria-current="page"] { border-bottom: 2px solid var(--sand-ink); padding-bottom: 2px; }
+.nav-cta { background: var(--slate); color: var(--white) !important; padding: .6rem 1.3rem; border-radius: 2px; }
+.nav-cta:hover { background: var(--slate-dark); }
+
+.btn { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--ff-body); font-size: .8rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 1rem 1.8rem; border: 1.5px solid transparent; cursor: pointer; transition: background .25s, transform .25s, color .25s; }
+.btn-sand { background: var(--sand); color: var(--slate-dark); }
+.btn-sand:hover { background: #d3b996; transform: translateX(3px); }
+.btn-ghost { border-color: rgba(255,255,255,.4); color: var(--white); background: transparent; }
+.btn-ghost:hover { border-color: var(--sand); color: var(--sand); }
+.btn-slate { background: var(--slate-dark); color: var(--white); }
+.btn-slate:hover { background: var(--slate); }
+.btn-outline { background: var(--white); color: var(--slate); border-color: var(--slate-pale); padding: .7rem 1.3rem; }
+.btn-outline:hover { border-color: var(--slate); }
+.btn-outline.active, .btn-outline[aria-pressed="true"] { background: var(--slate); color: var(--white); border-color: var(--slate); }
+
+.section-label { font-size: .7rem; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; color: var(--sand-ink); margin: 0 0 1rem; }
+.on-dark .section-label { color: var(--sand); }
+.section-title { font-family: var(--ff-display); font-size: clamp(2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1.15; color: var(--slate-dark); margin: 0 0 1.5rem; text-wrap: balance; }
+.on-dark .section-title { color: var(--white); }
+section { padding: 5.5rem var(--gutter); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; padding: 0; }
+.hero-left { background: var(--slate-dark); padding: 5.5rem clamp(1.25rem, 5vw, 5rem) 5rem var(--gutter); display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.hero-eyebrow { font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--sand); margin: 0 0 1.4rem; }
+.hero-title { font-family: var(--ff-display); font-size: clamp(2.7rem, 4.6vw, 4.3rem); font-weight: 300; line-height: 1.1; color: var(--white); margin: 0 0 1.2rem; text-wrap: balance; }
+.hero-title em { font-style: italic; color: var(--sand); }
+.hero-rule { width: 50px; height: 1px; background: var(--sand); margin: 0 0 1.8rem; }
+.hero-tagline { font-size: 1.02rem; font-weight: 300; color: rgba(255,255,255,.78); max-width: 30rem; margin: 0 0 2.3rem; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; }
+.hero-right { background: radial-gradient(ellipse at 50% 60%, #FFFFFF 0%, var(--slate-pale) 75%); min-width: 0; display: flex; align-items: center; justify-content: center; padding: 3rem clamp(1.25rem, 4vw, 4rem); }
+.hero-right svg.badge { width: 100%; max-width: 520px; height: auto; min-height: 0; margin-block: 1rem; }
+.hero-right img { display: block; width: 100%; max-width: 560px; height: auto; filter: drop-shadow(0 18px 22px rgba(45,63,84,.22)); }
+.hero-right svg { width: 100%; height: 100%; min-height: 340px; display: block; }
+
+.strip { background: var(--slate); padding: 1.15rem var(--gutter); display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 2.4rem; }
+.strip-item { display: flex; align-items: center; gap: .55rem; color: rgba(255,255,255,.9); font-size: .78rem; font-weight: 500; letter-spacing: .08em; }
+.dot { width: 4px; height: 4px; background: var(--sand); border-radius: 50%; }
+
+/* about */
+#about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+#about > * { min-width: 0; }
+.about-text p { font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-light); margin: 0 0 1.2rem; max-width: 36rem; }
+.about-text p strong { color: var(--text); font-weight: 500; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; max-width: 26rem; }
+.stat { background: var(--white); padding: 1.3rem 1.4rem; border-left: 3px solid var(--sand); }
+.stat-num { font-family: var(--ff-display); font-size: 2.3rem; font-weight: 300; color: var(--slate); line-height: 1; margin-bottom: .35rem; }
+.stat-label { font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--text-light); }
+.stays { display: grid; gap: 1.5px; background: var(--slate-pale); }
+.stay { background: var(--white); padding: 1.8rem 2rem; display: grid; grid-template-columns: auto 1fr; gap: 0 1.3rem; align-items: start; transition: background .3s; position: relative; }
+.stay:hover { background: var(--slate-dark); }
+.stay:hover .stay-title { color: var(--white); }
+.stay:hover .stay-desc { color: rgba(255,255,255,.75); }
+.stay:hover .stay-link { color: var(--sand); }
+.stay:hover .term { color: var(--sand); }
+.stay-icon { width: 46px; height: 46px; display: grid; place-items: center; background: var(--slate-pale); color: var(--slate); }
+.stay-title { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 600; color: var(--slate-dark); margin: 0 0 .35rem; transition: color .3s; line-height: 1.2; }
+.stay-desc { font-size: .9rem; font-weight: 300; line-height: 1.7; color: var(--text-light); margin: 0 0 .7rem; transition: color .3s; }
+.stay-link { font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); text-decoration: none; transition: color .3s; }
+.stay-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* communal living term */
+.term { font: inherit; font-weight: 500; color: var(--slate); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--sand-ink); transition: color .3s; }
+.term::after { content: "?"; display: inline-grid; place-items: center; width: 1.05em; height: 1.05em; margin-left: .3em; border-radius: 50%; background: var(--sand); color: var(--slate-dark); font-size: .7em; font-weight: 700; vertical-align: .15em; text-decoration: none; }
+.term:hover { color: var(--sand-ink); }
+.stay-title .term { font-family: var(--ff-display); font-size: inherit; font-weight: 600; line-height: inherit; color: inherit; text-align: left; }
+.stay-title .term::after { font-family: var(--ff-body); }
+.stay:hover .stay-title .term { color: var(--white); }
+.stay:hover .stay-title .term:hover { color: var(--sand); }
+.modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1.25rem; background: rgba(26,35,50,.62); backdrop-filter: blur(3px); }
+.modal-card { position: relative; background: var(--white); max-width: 30rem; width: 100%; padding: 2.4rem 2.2rem 2rem; border-top: 3px solid var(--sand); box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+.modal-card h3 { font-family: var(--ff-display); font-size: 2rem; font-weight: 500; color: var(--slate-dark); margin: 0 0 1rem; }
+.modal-card p { font-size: 1.02rem; line-height: 1.8; color: var(--text); margin: 0 0 1.6rem; font-weight: 300; }
+.modal-x { position: absolute; top: .7rem; right: .8rem; width: 2.4rem; height: 2.4rem; background: none; border: 0; font-size: 1.7rem; line-height: 1; color: var(--text-light); cursor: pointer; }
+.modal-x:hover { color: var(--slate-dark); }
+.modal-card .btn { padding: .8rem 1.5rem; }
+
+/* properties band */
+.band { background: var(--slate-dark); text-align: center; }
+.band .section-title { max-width: 36rem; margin-inline: auto; }
+.band p { color: rgba(255,255,255,.75); font-weight: 300; max-width: 34rem; margin: 0 auto 2rem; line-height: 1.8; }
+
+/* contact */
+#contact { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+#contact > * { min-width: 0; }
+.contact-info p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--text-light); margin: 0 0 1.6rem; max-width: 30rem; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; }
+.email-text { font-size: 1.05rem; font-weight: 500; color: var(--slate); user-select: all; word-break: break-all; }
+.copy-btn { font-family: var(--ff-body); font-size: .7rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; background: var(--white); color: var(--slate); border: 1.5px solid var(--slate-pale); padding: .5rem .9rem; cursor: pointer; }
+.copy-btn:hover { border-color: var(--slate); }
+.form { display: flex; flex-direction: column; gap: 1.1rem; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.field { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.field label { font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); }
+.field input, .field select, .field textarea { width: 100%; padding: .85rem 1rem; border: 1px solid rgba(75,95,117,.25); background: var(--white); font-family: var(--ff-body); font-size: .95rem; color: var(--text); border-radius: 0; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--slate); outline-offset: 0; border-color: var(--slate); }
+.field textarea { height: 130px; resize: vertical; }
+.form-note { font-size: .78rem; font-style: italic; color: var(--text-light); margin: 0; }
+.ready { background: var(--white); border-left: 3px solid var(--sand); padding: 1.6rem; }
+.ready h3 { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 600; color: var(--slate-dark); margin: 0 0 .5rem; }
+.ready p { font-size: .92rem; line-height: 1.7; color: var(--text-light); margin: 0 0 1rem; }
+.ready textarea { width: 100%; height: 190px; font-family: var(--ff-body); font-size: .85rem; padding: .8rem; border: 1px solid rgba(75,95,117,.25); background: var(--off-white); color: var(--text); resize: vertical; margin-bottom: 1rem; }
+.ready-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.ready-actions .btn { padding: .8rem 1.3rem; }
+
+footer { background: var(--text); padding: 2.3rem var(--gutter); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem; }
+.footer-logo { font-family: var(--ff-display); font-size: 1.3rem; color: var(--white); font-weight: 300; }
+.footer-logo span { color: var(--sand); }
+.footer-text { font-size: .78rem; color: rgba(255,255,255,.55); }
+.footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+.footer-links a { font-size: .78rem; color: rgba(255,255,255,.6); text-decoration: none; }
+.footer-links a:hover { color: var(--sand); }
+
+/* properties page */
+.page-head { background: var(--slate-dark); padding: 4.5rem var(--gutter) 3.5rem; }
+.page-head .hero-title { font-size: clamp(2.4rem, 4vw, 3.6rem); margin-bottom: 1rem; }
+.page-head p.lead { color: rgba(255,255,255,.78); font-weight: 300; font-size: 1.02rem; line-height: 1.7; max-width: 38rem; margin: 0; }
+.page-head p.lead .term { color: var(--sand); text-decoration-color: var(--sand); }
+.filters { background: var(--white); border-bottom: 1px solid var(--slate-pale); padding: 1.3rem var(--gutter); display: flex; flex-wrap: wrap; gap: 1rem 2.4rem; align-items: center; }
+.fgroup { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.fgroup-label { font-size: .68rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--text-light); margin-right: .3rem; }
+.results { padding: 3rem var(--gutter) 5rem; }
+.count { font-size: .85rem; color: var(--text-light); margin: 0 0 1.6rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.6rem; }
+.card { background: var(--white); display: flex; flex-direction: column; min-width: 0; border-bottom: 3px solid transparent; transition: border-color .3s, box-shadow .3s; }
+.card:hover { border-bottom-color: var(--sand); box-shadow: 0 14px 40px rgba(45,63,84,.12); }
+.card-art { position: relative; aspect-ratio: 16 / 10; max-width: 100%; background: var(--slate-pale); }
+.card-art svg, .card-art img { width: 100%; height: 100%; display: block; }
+.card-art img { object-fit: cover; object-position: 40% 50%; }
+.btn[disabled] { background: var(--slate-pale); color: var(--text-light); cursor: not-allowed; transform: none; }
+.ribbon { position: absolute; top: .8rem; left: .8rem; background: var(--white); color: var(--slate-dark); font-size: .65rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .6rem; }
+.card.unavailable { background: #F1F3F5; }
+.card.unavailable .card-art img { filter: grayscale(1) contrast(.9); opacity: .72; }
+.card.unavailable h3, .card.unavailable .meta { color: var(--text-light); }
+.card.unavailable .chip { background: #E3E7EB; color: var(--text-light); }
+.card.unavailable:hover { border-bottom-color: transparent; box-shadow: none; }
+.about-side { min-width: 0; }
+.owner { display: grid; grid-template-columns: 120px 1fr; gap: 1.4rem; align-items: center; background: var(--white); border-left: 3px solid var(--sand); padding: 1.2rem 1.4rem; margin-top: 1.5rem; }
+.owner img { width: 120px; height: 120px; object-fit: cover; object-position: 50% 22%; display: block; }
+.owner .section-label { margin-bottom: .4rem; }
+.owner-name { font-family: var(--ff-display); font-size: 1.7rem; font-weight: 600; color: var(--slate-dark); margin: 0 0 .3rem; line-height: 1.1; }
+.owner-desc { font-size: .9rem; font-weight: 300; line-height: 1.65; color: var(--text-light); margin: 0; }
+@media (max-width: 420px) { .owner { grid-template-columns: 88px 1fr; gap: 1rem; } .owner img { width: 88px; height: 88px; } }
+.card .feat { font-size: .85rem; line-height: 1.65; color: var(--text); margin: 0; }
+.rooms { border-top: 1px solid var(--slate-pale); padding-top: .8rem; }
+.rooms summary { font-size: .7rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--slate); cursor: pointer; margin-bottom: .6rem; }
+.rooms ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.rooms li { display: flex; justify-content: space-between; align-items: flex-start; gap: .8rem; padding: .55rem 0; border-bottom: 1px solid var(--slate-pale); }
+.rooms li:last-child { border-bottom: 0; }
+.rooms li > div { min-width: 0; display: flex; flex-direction: column; }
+.rooms li strong { font-size: .85rem; font-weight: 500; color: var(--slate-dark); }
+.rooms li div span { font-size: .75rem; color: var(--text-light); }
+.st { flex: none; font-size: .65rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: .25rem .55rem; text-align: right; }
+.st.ok { background: #F0E8DB; color: #6B5330; }
+.st.no { background: #E9ECEF; color: var(--text-light); }
+.ribbon.live { background: var(--sand); color: var(--slate-dark); }
+.card-body { padding: 1.5rem 1.6rem 1.7rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip { font-size: .66rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .6rem; background: var(--slate-pale); color: var(--slate-dark); }
+.chip.sand { background: #F0E8DB; color: #6B5330; }
+.card h3 { font-family: var(--ff-display); font-size: 1.5rem; font-weight: 600; color: var(--slate-dark); margin: 0; line-height: 1.2; }
+.card .meta { font-size: .82rem; font-weight: 500; color: var(--slate); margin: 0; }
+.card .desc { font-size: .9rem; font-weight: 300; line-height: 1.7; color: var(--text-light); margin: 0; flex: 1; }
+.card .btn { align-self: flex-start; padding: .75rem 1.2rem; }
+.empty { background: var(--white); border-left: 3px solid var(--sand); padding: 1.6rem; max-width: 34rem; }
+.empty p { margin: 0 0 1rem; color: var(--text-light); line-height: 1.7; }
+
+@media (max-width: 820px) {
+  .hero, #about, #contact { grid-template-columns: 1fr; }
+  .hero-left { padding: 3.5rem var(--gutter); }
+  .hero-right svg { min-height: 0; height: auto; }
+  section { padding: 3.5rem var(--gutter); }
+  .nav-links .opt { display: none; }
+  .nav-links { gap: 1.1rem; }
+  .brand { font-size: 1.2rem; }
+  .row2 { grid-template-columns: 1fr; }
+  .stay { padding: 1.4rem; }
+  .page-head { padding: 3rem var(--gutter) 2.5rem; }
+  .results { padding: 2rem var(--gutter) 3.5rem; }
+}
+@media (max-width: 420px) {
+  .logo-img { height: 40px; }
+  .nav-cta { padding: .55rem .9rem; }
+}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <a class="brand" href="index.html"><img src="logo-cottage.png" alt="" width="52" height="49" class="logo-img"><div>Leigh Leigh's <span>Cottages</span></div></a>
+  <ul class="nav-links">
+    <li class="opt"><a href="index.html#about">About</a></li>
+    <li><a href="properties.html" aria-current="page">Properties</a></li>
+    <li class="opt"><a href="index.html#contact">Contact</a></li>
+    <li><a class="nav-cta" href="index.html#contact">Inquire</a></li>
+  </ul>
+</nav>
+
+<header class="page-head on-dark">
+  <p class="hero-eyebrow">Available Properties</p>
+  <h1 class="hero-title">Find your <em>cottage.</em></h1>
+  <p class="lead">Short-term stays, long-term rentals, and <button type="button" class="term" aria-haspopup="dialog">communal living</button> homes across Virginia and North Carolina.</p>
+</header>
+
+<div class="filters" role="group" aria-label="Filter properties">
+  <div class="fgroup"><span class="fgroup-label">Type</span>
+    <button type="button" class="btn btn-outline" data-ftype="all" aria-pressed="true">All</button>
+    <button type="button" class="btn btn-outline" data-ftype="short" aria-pressed="false">Short-Term</button>
+    <button type="button" class="btn btn-outline" data-ftype="long" aria-pressed="false">Long-Term</button>
+    <button type="button" class="btn btn-outline" data-ftype="communal" aria-pressed="false">Communal Living</button>
+  </div>
+  <div class="fgroup"><span class="fgroup-label">State</span>
+    <button type="button" class="btn btn-outline" data-fstate="all" aria-pressed="true">Both</button>
+    <button type="button" class="btn btn-outline" data-fstate="VA" aria-pressed="false">Virginia</button>
+    <button type="button" class="btn btn-outline" data-fstate="NC" aria-pressed="false">North Carolina</button>
+  </div>
+</div>
+
+<main class="results">
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid">
+    <article class="card unavailable" data-type="short long" data-state="NC">
+      <div class="card-art"><img src="sandfiddler-sanctuary.jpg" alt="Blue shingled beach cottage with a wide deck and wooden boardwalk stairs rising over the dunes" loading="lazy"><span class="ribbon">Currently unavailable</span></div>
+      <div class="card-body">
+        <div class="chips"><span class="chip ">Short-Term &amp; Long-Term</span><span class="chip">North Carolina</span></div>
+        <h3>Sandfiddler Sanctuary</h3>
+        <p class="meta">Emerald Isle, NC</p>
+        <p class="desc">A short-term or long-term rental in Emerald Isle. Not available right now.</p>
+        
+        
+        <button type="button" class="btn btn-slate" disabled aria-disabled="true">Not Available Right Now</button>
+      </div>
+    </article>
+    <article class="card" data-type="communal" data-state="VA">
+      <div class="card-art"><img src="monarch-manor.jpg" alt="White two-story Norfolk house with black shutters, a covered front porch and a green front lawn" loading="lazy"><span class="ribbon live">Next opening Dec 1, 2026</span></div>
+      <div class="card-body">
+        <div class="chips"><span class="chip sand">Communal Living</span><span class="chip">Virginia</span></div>
+        <h3>Monarch Manor</h3>
+        <p class="meta">Norfolk, VA &middot; 6 BR &middot; 3.5 BA &middot; 2 blocks from ODU campus</p>
+        <p class="desc">Communal living close to everything: 5 minutes to downtown, Sentara and EVMS, and 10 minutes to the Norfolk Navy Base. A fit for a professor, grad or med student, or Navy. Every bedroom is a locked, private space. <button type="button" class="term" aria-haspopup="dialog">What is communal living?</button></p>
+        <p class="feat"><strong>Shared spaces:</strong> Dining room, kitchen, 2 dens, front porch, and a back deck, with a shed and greenhouse out back.</p>
+        <details class="rooms" open><summary>Rooms &amp; availability</summary><ul><li><div><strong>Master suite</strong><span>1st floor rear right &middot; Private en-suite bath</span></div><span class="st no">Unavailable</span></li><li><div><strong>Master suite</strong><span>2nd floor front left &middot; Private en-suite bath</span></div><span class="st ok">Available Jan 1, 2027</span></li><li><div><strong>Bedroom</strong><span>2nd floor front right &middot; Shared bath</span></div><span class="st ok">Available Dec 1, 2026</span></li><li><div><strong>Bedroom</strong><span>2nd floor middle &middot; Shared bath</span></div><span class="st no">Unavailable</span></li><li><div><strong>Bedroom</strong><span>2nd floor rear right &middot; Shared bath</span></div><span class="st no">Unavailable</span></li><li><div><strong>Bedroom</strong><span>2nd floor rear left &middot; Shared bath</span></div><span class="st no">Unavailable</span></li></ul></details>
+        <a class="btn btn-slate" href="index.html#contact">Ask About This Property</a>
+      </div>
+    </article>
+  </div>
+  <div class="empty" id="empty" hidden>
+    <p>Nothing matches those filters right now. Tell me what you are looking for and I will let you know when something opens up.</p>
+    <a class="btn btn-slate" href="index.html#contact">Contact Me</a>
+  </div>
+</main>
+
+<footer class="on-dark">
+  <div class="footer-logo">Leigh Leigh's <span>Cottages</span></div>
+  <div class="footer-text">Short-term, long-term, and communal living rentals in Virginia and North Carolina.</div>
+  <div class="footer-text">&copy; 2026 Leigh Leigh's Cottages. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="properties.html#short">Short-Term</a>
+    <a href="properties.html#long">Long-Term</a>
+    <a href="properties.html#communal">Communal Living</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+<div class="modal" id="cl-modal" hidden role="dialog" aria-modal="true" aria-labelledby="cl-title">
+  <div class="modal-card on-light">
+    <button type="button" class="modal-x" data-close aria-label="Close definition">&times;</button>
+    <p class="section-label">Definition</p>
+    <h3 id="cl-title">Communal living</h3>
+    <p>Communal living is a lifestyle where individuals or families share common space, resources, and domestic responsibilities, with each bedroom space being locked, private space.</p>
+    <button type="button" class="btn btn-slate btn-close" data-close>Got it</button>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('cl-modal'), last = null;
+  function openModal(e) { last = e.currentTarget; modal.hidden = false; document.body.style.overflow = 'hidden'; modal.querySelector('.btn-close').focus(); }
+  function closeModal() { modal.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  document.querySelectorAll('.term').forEach(function (b) { b.addEventListener('click', openModal); });
+  modal.addEventListener('click', function (e) { if (e.target === modal || e.target.closest('[data-close]')) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  window.copyFrom = function (btn, text, selectEl) {
+    var label = btn.textContent;
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = label; }, 2200); }
+    function fallback() {
+      try {
+        if (selectEl) {
+          if (selectEl.select) { selectEl.focus(); selectEl.select(); }
+          else { var r = document.createRange(); r.selectNodeContents(selectEl); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+        }
+      } catch (err) {}
+      done('Press Ctrl/Cmd+C');
+    }
+    try { navigator.clipboard.writeText(text).then(function () { done('Copied'); }, fallback); }
+    catch (err) { fallback(); }
+  };
+})();
+</script>
+<script>
+(function () {
+  var type = 'all', state = 'all';
+  var h = location.hash.replace('#', '');
+  if (['short', 'long', 'communal'].indexOf(h) > -1) type = h;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var tBtns = document.querySelectorAll('[data-ftype]'), sBtns = document.querySelectorAll('[data-fstate]');
+  var count = document.getElementById('count'), empty = document.getElementById('empty');
+  function apply() {
+    var n = 0;
+    cards.forEach(function (c) {
+      var ok = (type === 'all' || c.dataset.type.split(' ').indexOf(type) > -1) && (state === 'all' || c.dataset.state === state);
+      c.hidden = !ok; if (ok) n++;
+    });
+    tBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.ftype === type)); });
+    sBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.fstate === state)); });
+    count.textContent = 'Showing ' + n + ' of ' + cards.length + ' properties';
+    empty.hidden = n > 0;
+  }
+  tBtns.forEach(function (b) { b.addEventListener('click', function () { type = b.dataset.ftype; apply(); }); });
+  sBtns.forEach(function (b) { b.addEventListener('click', function () { state = b.dataset.fstate; apply(); }); });
+  apply();
+  window.addEventListener('hashchange', function () {
+    var x = location.hash.replace('#', '');
+    if (['short', 'long', 'communal'].indexOf(x) > -1) { type = x; apply(); }
+  });
+})();
+</script>
+</body>
+</html>
